@@ -11,6 +11,15 @@
 
 ### Text
 
+
+```mermaid
+  graph TD;
+      A-->B;
+      A-->C;
+      B-->D;
+      C-->D;
+```
+
 ```markdown
 _italic_ or *italic*
 

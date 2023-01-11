@@ -16,3 +16,4 @@ DerivedData/
 Release/
 .Archive
 .markeditor
+.vendor

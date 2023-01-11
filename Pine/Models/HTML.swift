@@ -60,6 +60,7 @@ class HTML {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc/katex.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc/katex.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0-rc/contrib/auto-render.min.js"></script>
+        <script src=\(mermaidScript())></script>
       </head>
       <body dir="\(dir)">
         \(contents)
@@ -74,6 +75,7 @@ class HTML {
               {left: "$", right: "$", display: false},
             ]});
           </script>
+          \(loadMermaid())
           \(pluginScripts.joined(separator: " "))
         </div>
       </body>
@@ -124,6 +126,38 @@ class HTML {
 
     self.pluginScripts = scriptNames.map { "<script src='\($0)'></script>" }
   }
+
+    private func mermaidScript(version: String = "9.0.0") -> String {
+        "\"https://cdnjs.cloudflare.com/ajax/libs/mermaid/\(version)/mermaid.min.js\""
+    }
+
+    // HELPME: https://css-tricks.com/making-mermaid-diagrams-in-markdown/
+    private func loadMermaid() -> String {
+        """
+          <script>
+          var config = {
+              startOnLoad: true,
+              theme: (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) ? "dark" : "default",
+              flowchart:{
+                      useMaxWidth: false,
+                      htmlLabels: true
+                  }
+          };
+          mermaid.initialize(config);
+          // select <pre class="mermaid"> _and_ <pre><code class="language-mermaid">
+          document.querySelectorAll("pre.mermaid, pre>code.language-mermaid").forEach($el => {
+            // if the second selector got a hit, reference the parent <pre>
+            if ($el.tagName === "CODE")
+              $el = $el.parentElement
+            // put the Mermaid contents in the expected <div class="mermaid">
+            // plus keep the original contents in a nice <details>
+            $el.outerHTML = `
+              <div class="mermaid">${$el.textContent}</div>
+            `
+          })
+          </script>
+        """
+    }
 
 }
 
