@@ -1,0 +1,24 @@
+{
+  "originHash" : "00c750351d0d2da33fe7e31f601c01da1a7d11bde035649613c90086d13d4a93",
+  "pins" : [
+    {
+      "identity" : "cmark-gfm-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/amine2233/cmark-gfm-swift",
+      "state" : {
+        "branch" : "master",
+        "revision" : "ef6afbd1b5512e2dfd018f44810991c1c7565e47"
+      }
+    },
+    {
+      "identity" : "highlightr",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/raspu/Highlightr",
+      "state" : {
+        "revision" : "bcf2d0590f32ac2528feb72d7e34f5b463801a47",
+        "version" : "2.2.1"
+      }
+    }
+  ],
+  "version" : 3
+}

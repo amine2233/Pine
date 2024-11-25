@@ -99,8 +99,8 @@ struct LatexExporter: Exportable {
 
     if let l = Node(
       markdown: markdownTextView.string,
-      options: preferences.markdownOptions,
-      extensions: preferences.markdownExtensions
+      options: [],
+      extensions: []
     )?.latex {
       let latex = """
       \\documentclass[12pt]{article}
@@ -131,8 +131,8 @@ struct XMLExporter: Exportable {
     guard
       let xml = Node(
         markdown: markdownTextView.string,
-        options: preferences.markdownOptions,
-        extensions: preferences.markdownExtensions
+        options: [],
+        extensions: []
       )?.xml,
       let data = xml.data(using: .utf8)
     else { return }
