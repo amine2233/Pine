@@ -95,49 +95,49 @@ class Preferences {
 
   // MARK: - Dynamic preferences
 
-  public var markdownExtensions: [MarkdownExtensions] {
-    var extensions: [MarkdownExtensions] = []
+//  public var markdownExtensions: [MarkdownExtensions] {
+//    var extensions: [MarkdownExtensions] = []
+//
+//    if self[.markdownEmojis] {
+//      extensions.append(.emoji)
+//    }
+//
+//    if self[.markdownTables] {
+//      extensions.append(.table)
+//    }
+//
+//    if self[.markdownAutolink] {
+//      extensions.append(.autolink)
+//    }
+//
+//    if self[.markdownMentions] {
+//      extensions.append(.mention)
+//    }
+//
+//    if self[.markdownCheckboxes] {
+//      extensions.append(.checkbox)
+//    }
+//
+//    if self[.markdownWikilinks] {
+//      extensions.append(.wikilink)
+//    }
+//
+//    if self[.markdownStrikethrough] {
+//      extensions.append(.strikethrough)
+//    }
+//
+//    return extensions
+//  }
 
-    if self[.markdownEmojis] {
-      extensions.append(.emoji)
-    }
-
-    if self[.markdownTables] {
-      extensions.append(.table)
-    }
-
-    if self[.markdownAutolink] {
-      extensions.append(.autolink)
-    }
-
-    if self[.markdownMentions] {
-      extensions.append(.mention)
-    }
-
-    if self[.markdownCheckboxes] {
-      extensions.append(.checkbox)
-    }
-
-    if self[.markdownWikilinks] {
-      extensions.append(.wikilink)
-    }
-
-    if self[.markdownStrikethrough] {
-      extensions.append(.strikethrough)
-    }
-
-    return extensions
-  }
-
-  public var markdownOptions: [MarkdownOptions] {
-    var options: [MarkdownOptions] = []
-
-    if self[.markdownFootnotes] {
-      options.append(.footnotes)
-    }
-
-    return options
-  }
+//  public var markdownOptions: [MarkdownOptions] {
+//    var options: [MarkdownOptions] = []
+//
+//    if self[.markdownFootnotes] {
+//      options.append(.footnotes)
+//    }
+//
+//    return options
+//  }
 
   public var font: NSFont {
     get {

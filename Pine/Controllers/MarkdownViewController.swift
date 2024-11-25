@@ -234,8 +234,8 @@ class MarkdownViewController: NSViewController, NSTextViewDelegate, HighlightDel
     DispatchQueue.global(qos: .userInitiated).async {
       if let parsed = Node(
         markdown: markdownText,
-        options: preferences.markdownOptions,
-        extensions: preferences.markdownExtensions
+        options: [],
+        extensions: []
       )?.html {
         DispatchQueue.main.async {
           self.previewViewController?.captureScroll {
